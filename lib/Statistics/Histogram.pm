@@ -199,7 +199,7 @@ Statistics::Histogram - Create a standard histogram for command-line display
 
 =head1 VERSION
 
-version 0.1
+version 0.2
 
 =head1 SYNOPSIS
 
@@ -217,24 +217,30 @@ an array reference as its only required argument. The array should contain
 a sequence of numbers, and the response will be an ascii-formatted
 histogram, including some header lines providing statistics.
 
-=head1 ATTRIBUTES
-
-=head2 num_bins
-
-$num_bins defaults to 10, and controls the maximum number of bins in the chart. Depending on the data, there may be fewer bins if there are fewer than $num_bins unique values.
-
-=head2 use_linear_axes
-
-$use_linear_axes defaults to false, which will create a chart with logarithmic axes. This is most useful for data derived from software timing metrics, which tend to be non-Normal and biased towards the axes. 
-
 =head1 METHODS
 
 =head2 get_histogram
 
   print get_histogram($array_ref);
-  print get_histogram($array_ref, $num_bins, $use_linear_axes);
+  print get_histogram($array_ref, $num_bins, $use_linear_axes, $use_integral_bins);
 
-There are two optional arguments: $num_bins and $use_linear_axes.
+There are three optional arguments: $num_bins, $use_linear_axes, and use_integral_bins.
+
+=over 4
+
+=item num_bins
+
+$num_bins defaults to 10, and controls the maximum number of bins in the chart. Depending on the data, there may be fewer bins if there are fewer than $num_bins unique values.
+
+=item use_linear_axes
+
+$use_linear_axes defaults to false, which will create a chart with logarithmic axes. This is most useful for data derived from software timing metrics, which tend to be non-Normal and biased towards the axes. 
+
+=item use_integral_bins
+
+$use_integral_bins defaults to false. If true it forces use_linear_axes and makes the bins fall on integral values. This is good for plotting time-series data, like the number of events in each hour of the day.
+
+=back
 
 =head1 SEE ALSO
 

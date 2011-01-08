@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# PODNAME: histogram_log
+# PODNAME: histogram
 # ABSTRACT: command-line tool for generating log-log histogram of data on stdin
 
 use strict;
@@ -50,11 +50,11 @@ __END__
 
 =head1 NAME
 
-histogram_log - command-line tool for generating log-log histogram of data on stdin
+histogram - command-line tool for generating log-log histogram of data on stdin
 
 =head1 VERSION
 
-version 0.1
+version 0.2
 
 =head1 AUTHOR
 
